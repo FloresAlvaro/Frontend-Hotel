@@ -1,0 +1,22 @@
+.app-header {
+  background: var(--app-white);
+  border-bottom: 1px solid var(--ui-border);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    min-height: 4.5rem;
+    padding: 1rem clamp(1rem, 2vw, 2rem);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}

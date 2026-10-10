@@ -1,0 +1,28 @@
+.app-footer {
+  background: var(--app-light);
+  border-top: 1px solid var(--ui-border);
+  color: var(--app-dark);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 0.75rem clamp(1rem, 2vw, 2rem);
+    font-size: 0.75rem;
+  }
+
+  &__copyright {
+    margin: 0;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
