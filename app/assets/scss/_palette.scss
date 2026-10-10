@@ -1,0 +1,36 @@
+// Variables globales compartidas por todos los componentes.
+@use 'sass:color';
+@use 'tokens';
+
+:root:root {
+  @each $name, $value in tokens.$palette {
+    --app-#{$name}: #{$value};
+    --app-#{$name}-hover: #{color.scale($value, $lightness: -15%)};
+    $foreground: #fff;
+    @if $name == warning or $name == light or $name == 'white' {
+      $foreground: #212529;
+    }
+    --app-on-#{$name}: #{$foreground};
+
+    $role: $name;
+    @if $name == danger {
+      $role: error;
+    }
+
+    --ui-#{$role}: var(--app-#{$name});
+    --ui-color-#{$role}-500: var(--app-#{$name});
+
+    @each $shade, $weight in (50: 95%, 100: 90%, 200: 75%, 300: 55%, 400: 25%) {
+      --ui-color-#{$role}-#{$shade}: #{color.mix(#fff, $value, $weight)};
+    }
+
+    @each $shade, $weight in (600: 15%, 700: 30%, 800: 45%, 900: 60%, 950: 75%)
+    {
+      --ui-color-#{$role}-#{$shade}: #{color.mix(#000, $value, $weight)};
+    }
+  }
+
+  --ui-bg: var(--app-white);
+  --ui-bg-muted: var(--app-light);
+  --ui-text: var(--app-dark);
+}

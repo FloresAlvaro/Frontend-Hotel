@@ -1,0 +1,13 @@
+.app-icon-button {
+  &__icon {
+    width: 1.25em;
+    height: 1.25em;
+    flex-shrink: 0;
+  }
+
+  &.app-icon-button--icon-only {
+    padding: var(--button-padding-y);
+    min-width: var(--button-height);
+    min-height: var(--button-height);
+  }
+}

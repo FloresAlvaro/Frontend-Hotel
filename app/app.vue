@@ -1,6 +1,6 @@
 <template>
   <UApp>
     <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    <UButton color="success">Confirmar</UButton>
   </UApp>
 </template>

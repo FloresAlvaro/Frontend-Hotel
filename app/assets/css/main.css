@@ -1,2 +1,20 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+@theme inline {
+  --color-danger: var(--app-danger);
+  --color-light: var(--app-light);
+  --color-dark: var(--app-dark);
+  --color-white: var(--app-white);
+}
+
+:root {
+  color-scheme: light;
+  --ui-bg: #fff;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--app-white);
+  color: var(--app-dark);
+}
