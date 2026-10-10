@@ -1,5 +1,8 @@
+$aqua: #20b2aa;
+
 $palette: (
-  primary: #007bff,
+  primary: $aqua,
+  'aqua': $aqua,
   secondary: #6c757d,
   success: #28a745,
   danger: #dc3545,

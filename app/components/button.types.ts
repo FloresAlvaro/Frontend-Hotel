@@ -1,5 +1,6 @@
 export type ButtonVariant =
   | 'primary'
+  | 'aqua'
   | 'secondary'
   | 'danger'
   | 'warning'

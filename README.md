@@ -13,7 +13,17 @@ npm ci
 npm run dev
 ```
 
-El servidor está disponible en http://localhost:3000. La instalación ejecuta `nuxt prepare` para generar tipos y la configuración de ESLint en `.nuxt`.
+El frontend está disponible en http://localhost:3001. La instalación ejecuta `nuxt prepare` para generar tipos y la configuración de ESLint en `.nuxt`.
+
+## Autenticación local
+
+El backend debe estar disponible en `http://localhost:3000/api`. Copiar `.env.example` a `.env` para personalizar `NUXT_PUBLIC_API_BASE`.
+
+En el contenedor del backend, configurar `FRONTEND_URL=http://localhost:3001`, `CORS_ORIGIN=http://localhost:3001`, `CORS_CREDENTIALS=true` y `COOKIE_SECURE=false` para desarrollo local con HTTP. Reiniciar el contenedor si cambia su configuración.
+
+El login usa los endpoints `/users/login`, `/users/profile` y `/account/logout`, con la cookie HttpOnly `hotel_session`. No se guardan tokens en localStorage. La comprobación inicial de sesión ocurre en el navegador, porque la cookie del backend está limitada a `/api`. El middleware controla la navegación; el backend valida la sesión y los permisos.
+
+Visitar `/auth/login` con una cuenta existente del backend. Tras iniciar sesión, `/` muestra el usuario y permite cerrar la sesión. No se incluyen registro ni recuperación de contraseña todavía.
 
 ## Calidad de código
 

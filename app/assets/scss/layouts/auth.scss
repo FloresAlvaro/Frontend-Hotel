@@ -1,0 +1,105 @@
+.auth-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  min-height: 100dvh;
+  background: var(--app-white);
+
+  &__welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+    padding: 1.5rem clamp(1.5rem, 3vw, 3rem) 5rem;
+    background: radial-gradient(
+      ellipse at 72% 52%,
+      color-mix(in srgb, var(--app-primary) 5%, transparent),
+      transparent 48%
+    );
+  }
+  &__brand {
+    align-self: flex-start;
+  }
+  &__copy {
+    margin-block: auto;
+    padding-block: 4rem;
+  }
+  &__eyebrow {
+    margin-bottom: 1rem;
+    color: var(--app-primary);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 3.4vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+  }
+  &__description {
+    margin-top: 1rem;
+    color: var(--app-secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  &__caption {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--app-secondary);
+    font-size: 0.75rem;
+    span {
+      display: grid;
+      place-items: center;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      color: var(--app-primary);
+      background: color-mix(in srgb, var(--app-primary) 10%, var(--app-white));
+    }
+  }
+  &__panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 3rem clamp(1.5rem, 3vw, 4rem) 1.25rem;
+    background: color-mix(in srgb, var(--app-primary) 4%, var(--app-white));
+  }
+  &__form {
+    display: grid;
+    place-items: center;
+    flex: 1;
+    padding-block: 3rem;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: var(--app-secondary);
+    font-size: 0.65rem;
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    &__welcome {
+      padding: 1.5rem;
+      gap: 1.5rem;
+    }
+    &__copy {
+      padding-block: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    &__caption {
+      display: none;
+    }
+    &__panel {
+      padding: 1.5rem;
+    }
+    &__form {
+      padding-block: 2rem;
+    }
+  }
+}
